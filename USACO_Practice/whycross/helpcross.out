@@ -1,0 +1,281 @@
+position: 59, type: 0
+output: 0, cowCnt: 0, cowRemove: 0
+position: 336, type: 2
+output: 0, cowCnt: 1, cowRemove: 0
+position: 492, type: 0
+output: 1, cowCnt: 0, cowRemove: 1
+position: 540, type: 0
+output: 1, cowCnt: 0, cowRemove: 1
+position: 709, type: 2
+output: 1, cowCnt: 1, cowRemove: 1
+position: 795, type: 2
+output: 1, cowCnt: 2, cowRemove: 1
+position: 1313, type: 2
+output: 1, cowCnt: 3, cowRemove: 1
+position: 1365, type: 1
+output: 1, cowCnt: 3, cowRemove: 0
+position: 1393, type: 0
+output: 2, cowCnt: 2, cowRemove: 1
+position: 1421, type: 0
+output: 3, cowCnt: 1, cowRemove: 2
+position: 1530, type: 0
+output: 4, cowCnt: 0, cowRemove: 3
+position: 1873, type: 0
+output: 4, cowCnt: 0, cowRemove: 3
+position: 2305, type: 2
+output: 4, cowCnt: 1, cowRemove: 3
+position: 2362, type: 0
+output: 5, cowCnt: 0, cowRemove: 4
+position: 2567, type: 0
+output: 5, cowCnt: 0, cowRemove: 4
+position: 2841, type: 1
+output: 5, cowCnt: 0, cowRemove: 3
+position: 2862, type: 0
+output: 5, cowCnt: 0, cowRemove: 3
+position: 3058, type: 0
+output: 5, cowCnt: 0, cowRemove: 3
+position: 3135, type: 0
+output: 5, cowCnt: 0, cowRemove: 3
+position: 3170, type: 1
+output: 5, cowCnt: 0, cowRemove: 2
+position: 3230, type: 1
+output: 5, cowCnt: 0, cowRemove: 1
+position: 3426, type: 0
+output: 5, cowCnt: 0, cowRemove: 1
+position: 3526, type: 0
+output: 5, cowCnt: 0, cowRemove: 1
+position: 3636, type: 1
+output: 5, cowCnt: 0, cowRemove: 0
+position: 4043, type: 2
+output: 5, cowCnt: 1, cowRemove: 0
+position: 4286, type: 2
+output: 5, cowCnt: 2, cowRemove: 0
+position: 4370, type: 0
+output: 6, cowCnt: 1, cowRemove: 1
+position: 4421, type: 0
+output: 7, cowCnt: 0, cowRemove: 2
+position: 4567, type: 2
+output: 7, cowCnt: 1, cowRemove: 2
+position: 4919, type: 0
+output: 8, cowCnt: 0, cowRemove: 3
+position: 5123, type: 0
+output: 8, cowCnt: 0, cowRemove: 3
+position: 5211, type: 0
+output: 8, cowCnt: 0, cowRemove: 3
+position: 5386, type: 0
+output: 8, cowCnt: 0, cowRemove: 3
+position: 5403, type: 2
+output: 8, cowCnt: 1, cowRemove: 3
+position: 5727, type: 1
+output: 8, cowCnt: 1, cowRemove: 2
+position: 5782, type: 0
+output: 9, cowCnt: 0, cowRemove: 3
+position: 5793, type: 1
+output: 9, cowCnt: 0, cowRemove: 2
+position: 6219, type: 2
+output: 9, cowCnt: 1, cowRemove: 2
+position: 6413, type: 0
+output: 10, cowCnt: 0, cowRemove: 3
+position: 6423, type: 1
+output: 10, cowCnt: 0, cowRemove: 2
+position: 6652, type: 2
+output: 10, cowCnt: 1, cowRemove: 2
+position: 6843, type: 1
+output: 10, cowCnt: 1, cowRemove: 1
+position: 6862, type: 0
+output: 11, cowCnt: 0, cowRemove: 2
+position: 6996, type: 0
+output: 11, cowCnt: 0, cowRemove: 2
+position: 7408, type: 1
+output: 11, cowCnt: 0, cowRemove: 1
+position: 7739, type: 2
+output: 11, cowCnt: 1, cowRemove: 1
+position: 7793, type: 0
+output: 12, cowCnt: 0, cowRemove: 2
+position: 8054, type: 1
+output: 12, cowCnt: 0, cowRemove: 1
+position: 8094, type: 2
+output: 12, cowCnt: 1, cowRemove: 1
+position: 8444, type: 2
+output: 12, cowCnt: 2, cowRemove: 1
+position: 8690, type: 0
+output: 13, cowCnt: 1, cowRemove: 2
+position: 8980, type: 0
+output: 14, cowCnt: 0, cowRemove: 3
+position: 9172, type: 0
+output: 14, cowCnt: 0, cowRemove: 3
+position: 9383, type: 0
+output: 14, cowCnt: 0, cowRemove: 3
+position: 9633, type: 1
+output: 14, cowCnt: 0, cowRemove: 2
+position: 9676, type: 2
+output: 14, cowCnt: 1, cowRemove: 2
+position: 9751, type: 1
+output: 14, cowCnt: 1, cowRemove: 1
+position: 10027, type: 0
+output: 15, cowCnt: 0, cowRemove: 2
+position: 10097, type: 2
+output: 15, cowCnt: 1, cowRemove: 2
+position: 10846, type: 2
+output: 15, cowCnt: 2, cowRemove: 2
+position: 10886, type: 0
+output: 16, cowCnt: 1, cowRemove: 3
+position: 10999, type: 1
+output: 16, cowCnt: 1, cowRemove: 2
+position: 11044, type: 1
+output: 16, cowCnt: 1, cowRemove: 1
+position: 11063, type: 1
+output: 16, cowCnt: 1, cowRemove: 0
+position: 11087, type: 2
+output: 16, cowCnt: 2, cowRemove: 0
+position: 11434, type: 2
+output: 16, cowCnt: 3, cowRemove: 0
+position: 11812, type: 1
+output: 16, cowCnt: 2, cowRemove: 0
+position: 12575, type: 1
+output: 16, cowCnt: 1, cowRemove: 0
+position: 12754, type: 2
+output: 16, cowCnt: 2, cowRemove: 0
+position: 12777, type: 0
+output: 17, cowCnt: 1, cowRemove: 1
+position: 13069, type: 0
+output: 18, cowCnt: 0, cowRemove: 2
+position: 13153, type: 1
+output: 18, cowCnt: 0, cowRemove: 1
+position: 13317, type: 2
+output: 18, cowCnt: 1, cowRemove: 1
+position: 13784, type: 0
+output: 19, cowCnt: 0, cowRemove: 2
+position: 13865, type: 2
+output: 19, cowCnt: 1, cowRemove: 2
+position: 13895, type: 1
+output: 19, cowCnt: 1, cowRemove: 1
+position: 13926, type: 0
+output: 20, cowCnt: 0, cowRemove: 2
+position: 13929, type: 0
+output: 20, cowCnt: 0, cowRemove: 2
+position: 14022, type: 0
+output: 20, cowCnt: 0, cowRemove: 2
+position: 14067, type: 0
+output: 20, cowCnt: 0, cowRemove: 2
+position: 14324, type: 0
+output: 20, cowCnt: 0, cowRemove: 2
+position: 14481, type: 2
+output: 20, cowCnt: 1, cowRemove: 2
+position: 14586, type: 2
+output: 20, cowCnt: 2, cowRemove: 2
+position: 15011, type: 0
+output: 21, cowCnt: 1, cowRemove: 3
+position: 15198, type: 0
+output: 22, cowCnt: 0, cowRemove: 4
+position: 15306, type: 2
+output: 22, cowCnt: 1, cowRemove: 4
+position: 15368, type: 0
+output: 23, cowCnt: 0, cowRemove: 5
+position: 15434, type: 2
+output: 23, cowCnt: 1, cowRemove: 5
+position: 15551, type: 1
+output: 23, cowCnt: 1, cowRemove: 4
+position: 15554, type: 1
+output: 23, cowCnt: 1, cowRemove: 3
+position: 15736, type: 0
+output: 24, cowCnt: 0, cowRemove: 4
+position: 15788, type: 2
+output: 24, cowCnt: 1, cowRemove: 4
+position: 15809, type: 1
+output: 24, cowCnt: 1, cowRemove: 3
+position: 15989, type: 1
+output: 24, cowCnt: 1, cowRemove: 2
+position: 16091, type: 0
+output: 25, cowCnt: 0, cowRemove: 3
+position: 16124, type: 2
+output: 25, cowCnt: 1, cowRemove: 3
+position: 16226, type: 2
+output: 25, cowCnt: 2, cowRemove: 3
+position: 16229, type: 0
+output: 26, cowCnt: 1, cowRemove: 4
+position: 16429, type: 0
+output: 27, cowCnt: 0, cowRemove: 5
+position: 16649, type: 0
+output: 27, cowCnt: 0, cowRemove: 5
+position: 16915, type: 0
+output: 27, cowCnt: 0, cowRemove: 5
+position: 17084, type: 2
+output: 27, cowCnt: 1, cowRemove: 5
+position: 17156, type: 1
+output: 27, cowCnt: 1, cowRemove: 4
+position: 17276, type: 2
+output: 27, cowCnt: 2, cowRemove: 4
+position: 17281, type: 0
+output: 28, cowCnt: 1, cowRemove: 5
+position: 17301, type: 2
+output: 28, cowCnt: 2, cowRemove: 5
+position: 17372, type: 1
+output: 28, cowCnt: 2, cowRemove: 4
+position: 17373, type: 0
+output: 29, cowCnt: 1, cowRemove: 5
+position: 17411, type: 1
+output: 29, cowCnt: 1, cowRemove: 4
+position: 17467, type: 2
+output: 29, cowCnt: 2, cowRemove: 4
+position: 17581, type: 1
+output: 29, cowCnt: 2, cowRemove: 3
+position: 17763, type: 0
+output: 30, cowCnt: 1, cowRemove: 4
+position: 17798, type: 1
+output: 30, cowCnt: 1, cowRemove: 3
+position: 18019, type: 1
+output: 30, cowCnt: 1, cowRemove: 2
+position: 18031, type: 2
+output: 30, cowCnt: 2, cowRemove: 2
+position: 18042, type: 0
+output: 31, cowCnt: 1, cowRemove: 3
+position: 18097, type: 2
+output: 31, cowCnt: 2, cowRemove: 3
+position: 18148, type: 1
+output: 31, cowCnt: 2, cowRemove: 2
+position: 18167, type: 0
+output: 32, cowCnt: 1, cowRemove: 3
+position: 18315, type: 0
+output: 33, cowCnt: 0, cowRemove: 4
+position: 18335, type: 0
+output: 33, cowCnt: 0, cowRemove: 4
+position: 18440, type: 2
+output: 33, cowCnt: 1, cowRemove: 4
+position: 18456, type: 0
+output: 34, cowCnt: 0, cowRemove: 5
+position: 18537, type: 0
+output: 34, cowCnt: 0, cowRemove: 5
+position: 18812, type: 1
+output: 34, cowCnt: 0, cowRemove: 4
+position: 18814, type: 2
+output: 34, cowCnt: 1, cowRemove: 4
+position: 19169, type: 1
+output: 34, cowCnt: 1, cowRemove: 3
+position: 19170, type: 0
+output: 35, cowCnt: 0, cowRemove: 4
+position: 19497, type: 2
+output: 35, cowCnt: 1, cowRemove: 4
+position: 19582, type: 2
+output: 35, cowCnt: 2, cowRemove: 4
+position: 19802, type: 0
+output: 36, cowCnt: 1, cowRemove: 5
+position: 19850, type: 1
+output: 36, cowCnt: 1, cowRemove: 4
+position: 19868, type: 1
+output: 36, cowCnt: 1, cowRemove: 3
+position: 19932, type: 2
+output: 36, cowCnt: 2, cowRemove: 3
+position: 19956, type: 0
+output: 37, cowCnt: 1, cowRemove: 4
+position: 20068, type: 1
+output: 37, cowCnt: 1, cowRemove: 3
+position: 20127, type: 1
+output: 37, cowCnt: 1, cowRemove: 2
+position: 20181, type: 1
+output: 37, cowCnt: 1, cowRemove: 1
+position: 20454, type: 1
+output: 37, cowCnt: 1, cowRemove: 0
+position: 22992, type: 1
+output: 37, cowCnt: 0, cowRemove: 0
+answer: 37
