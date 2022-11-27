@@ -1,7 +1,7 @@
 /*____________________________________________________________
-// started : 11/08/22
+// started : 11/26/22
 // finished:
-// problem : https://codeforces.com/problemset/problem/1719/C
+// problem : https://codeforces.com/problemset/problem/1716/D
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
@@ -35,56 +35,13 @@ ____________________________________________________________*/
 
 using namespace std;
 
-void solve() {
-    int n, q; cin >> n >> q;
-
-    vector<int> fighters(n);
-
-    FOR(n)
-        cin >> fighters[i];
-
-    vector<int> simul(n * 2);
-
-
-    vector<int> win_cnt(n, 0);
-    int index = 0;
-
-    while (simul[index] != n) {
-        if (simul[index] > simul[index + 1]) {
-            // same winner
-
-            simul[index + n] = simul[index + 1];
-            simul[index + 1] = simul[index];
-        }
-        else {
-            // new winner
-
-            simul[index + n] = simul[index];
-        }
-
-        index++;
-    }
-
-    FOR(q) {
-        int fi, k; cin >> fi >> k;
-
-        if (fi == n) {
-            cout << k - index;
-        }
-        else {
-
-        }
-    }
-
-}
+const ll MOD = 998244353;
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int t; cin >> t;
-    while (t--)
-        solve();
+    int n, k; cin >> n >> k;
 
     return 0;
 }
