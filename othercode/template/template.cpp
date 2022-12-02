@@ -6,10 +6,10 @@ ____________________________________________________________*/
 
 #include <bits/stdc++.h>
 
-#define FOR(n) for (int i = 0;i < n;i++)
-#define FORO(n) for (int i = 1;i < n;i++)
-#define ROF(n) for (int i = n - 1;i >= 0;i--)
-#define ROFO(n) for (int i = n - 1;i >= 1;i--)
+#define FOR(i, n) for (int i = 0;i < n;i++)
+#define FORO(i, n) for (int i = 1;i < n;i++)
+#define ROF(i, n) for (int i = n - 1;i >= 0;i--)
+#define ROFO(i, n) for (int i = n - 1;i >= 1;i--)
 #define loop while (true) // rust woooo
 #define ALL(arr) arr.begin(), arr.end()
 #define lower lower_bound 
