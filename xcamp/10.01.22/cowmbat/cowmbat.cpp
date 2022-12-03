@@ -1,15 +1,15 @@
 /*____________________________________________________________
-// started : 10/08/22
+// started : 11/30/22
 // finished:
 // problem : http://www.usaco.org/index.php?page=viewproblem2&cpid=971
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
 
-#define FOR(n) for (int i = 0;i < n;i++)
-#define FORO(n) for (int i = 1;i < n;i++)
-#define ROF(n) for (int i = n - 1;i >= 0;i--)
-#define ROFO(n) for (int i = n - 1;i >= 1;i--)
+#define FOR(i, n) for (int i = 0;i < n;i++)
+#define FORO(i, n) for (int i = 1;i < n;i++)
+#define ROF(i, n) for (int i = n - 1;i >= 0;i--)
+#define ROFO(i, n) for (int i = n - 1;i >= 1;i--)
 #define loop while (true) // rust woooo
 #define ALL(arr) arr.begin(), arr.end()
 #define lower lower_bound 
@@ -42,22 +42,34 @@ int main() {
     freopen("cowmbat.in", "r", stdin);
     freopen("cowmbat.out", "w", stdout);
 
-    int n, m, k; cin >> n >> m >> k;
-    string combo; cin >> combo;
+    /* input */
 
-    vector<vector<int>> dist(m, vector<int>(m));
-    for (int i = 0;i < m;i++) {
-        for (int j = 0;j < m;j++) {
-            cin >> dist[i][j];
+    int n, m, k; cin >> n >> m >> k;
+    string s; cin >> s;
+
+    int a[m][m];
+    int min_to[m][m];
+
+    FOR(i, m) {
+        FOR(j, m) {
+            cin >> a[i][j];
+            min_to[i][j] = a[i][j];
         }
     }
 
-    // Floyd-Warshall to calculate the shortest path from each letter to every
-    // other letter
-    for (int k = 0;k < m;k++)
-        for (int i = 0;i < m;i++)
-            for (int j = 0;j < m;j++)
-                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+    /* Floyd-Warshall */
+
+    FOR(i, m)
+        FOR(j, m)
+        FOR(k, m)
+        min_to[i][j] = min(min_to[i][j], min_to[i][k] + min_to[k][j]);
+
+
+
+    /* dp, where i, j is the min value for setting every cell until i to j */
+
+
+
 
 
 
