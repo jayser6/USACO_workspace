@@ -57,6 +57,8 @@ int main() {
         steps++;
         finished = true;
 
+        fill(dp[steps % 2].begin(), dp[steps % 2].end(), 0);
+
         FOR(j, n + 1) {
             int pull_index = j - (k + steps - 1);
 
