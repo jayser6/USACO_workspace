@@ -1,6 +1,6 @@
 /*____________________________________________________________
 // started : 11/30/22
-// finished:
+// finished: 12/05/22
 // problem : http://www.usaco.org/index.php?page=viewproblem2&cpid=971
 ____________________________________________________________*/
 
@@ -59,19 +59,56 @@ int main() {
 
     /* Floyd-Warshall */
 
-    FOR(i, m)
+    FOR(l, m)
+        FOR(i, m)
         FOR(j, m)
-        FOR(k, m)
-        min_to[i][j] = min(min_to[i][j], min_to[i][k] + min_to[k][j]);
+        min_to[i][j] = min(min_to[i][j], min_to[i][l] + min_to[l][j]);
 
+    /* psum for the floyd-warshall */
 
+    vector<vector<int>> psum(n + 1, vector<int>(m, 0));
+    fill(ALL(psum[0]), 0);
+
+    FORO(i, n + 1) {
+        FOR(j, m) {
+            int index = s[i - 1] - 'a';
+            psum[i][j] = psum[i - 1][j] + min_to[s[i - 1] - 'a'][j];
+        }
+    }
 
     /* dp, where i, j is the min value for setting every cell until i to j */
 
+    vector<vector<int>> dp(n + 1, vector<int>(m, PRIME32));
+    fill(ALL(dp[0]), 0);
 
+    FOR(i, n) {
+        int min_value = PRIME32; // min moves to get ot i
+        FOR(j, m) {
+            // continue the combo
+            min_value = min(min_value, dp[i][j]);
+            dp[i + 1][j] = min(dp[i + 1][j], dp[i][j] + min_to[s[i] - 'a'][j]);
+        }
 
+        int new_index = i + k;
+        if (i >= k && new_index <= n) {
+            // start a new combo at move i
 
+            FOR(j, m) {
+                int new_val = min_value + psum[new_index][j] - psum[i][j];
 
+                dp[new_index][j] = min(dp[new_index][j], new_val);
+            }
+        }
+    }
+
+    /* output */
+
+    int ans = PRIME32;
+    FOR(i, m) {
+        ans = min(ans, dp[n][i]);
+    }
+
+    cout << ans;
 
     return 0;
 }
