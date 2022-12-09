@@ -1,7 +1,7 @@
 /*____________________________________________________________
-// started :
-// finished:
-// problem :
+// started : 12/09/22
+// finished: 12/09/22
+// problem : https://codeforces.com/contest/1760/problem/F
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
@@ -35,12 +35,62 @@ ____________________________________________________________*/
 
 using namespace std;
 
+void solve() {
+    int n, d;
+    ll c; cin >> n >> c >> d;
+
+    vector<int> a(n);
+    FOR(i, n)
+        cin >> a[i];
+
+    sort(ALL(a), greater<int>());
+
+    /* check for edgecases */
+
+    if (accumulate(a.begin(), a.begin() + min(n, d), 0LL) >= c) {
+        cout << "Infinity" << endl;
+        return;
+    }
+    else if ((ll)a[0] * d < c) {
+        cout << "Impossible" << endl;
+        return;
+    }
+
+    /* binary search for the answer */
+
+    int l = 0, r = d + 1, ans = -1;
+    while (l <= r) {
+        int mid = (l + r) / 2;
+        ll sum = 0;
+
+        for (int i = 0;i < d;i++) {
+            if (i % (mid + 1) >= n)
+                continue;
+
+            sum += a[i % (mid + 1)];
+        }
+
+        if (sum >= c) {
+            ans = mid;
+            l = mid + 1;
+        }
+        else {
+            r = mid - 1;
+        }
+    }
+
+    cout << ans << endl;
+
+}
+
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    // freopen("", "r", stdin);
-    // freopen("", "w", stdout);
+    int t; cin >> t;
+
+    while (t--)
+        solve();
 
     return 0;
 }
