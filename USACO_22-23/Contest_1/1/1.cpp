@@ -53,6 +53,9 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
+    freopen("barn.in", "r", stdin);
+    freopen("barn.out", "w", stdout);
+
     int n; cin >> n;
 
     int sum = 0;

@@ -1,5 +1,5 @@
 /*____________________________________________________________
-// started : 12/10/22
+// started : 12/21/22
 // finished:
 // problem : https://codeforces.com/contest/1765/problem/H
 ____________________________________________________________*/
@@ -39,8 +39,14 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    // freopen("", "r", stdin);
-    // freopen("", "w", stdout);
+    int n, m; cin >> n >> m;
+
+    vector<int> p(n);
+    FOR(i, n)
+        cin >> p[i];
+
+
+
 
     return 0;
 }
