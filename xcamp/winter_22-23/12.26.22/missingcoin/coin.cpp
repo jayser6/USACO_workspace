@@ -1,7 +1,7 @@
 /*____________________________________________________________
-// started :
-// finished:
-// problem :
+// started : 12/26/22
+// finished: 12/26/22
+// problem : https://cses.fi/problemset/task/2183
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
@@ -27,8 +27,8 @@ ____________________________________________________________*/
 #define f first
 #define s second
 #define endl "\n"
-#define BIG_INT64 (ll)1e18
-#define PRIME64 (ll)999998727899999 // this number has 15 digits
+#define BIG_NUMBER 1e18LL
+#define BIG_PRIME 999998727899999LL // this number has 15 digits
 #define PRIME32 (int)(1e9 + 7) 
 #define ASCII_PRIME (int)257
 #define ALPHA_PRIME (int)29
@@ -39,8 +39,24 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    // freopen("", "r", stdin);
-    // freopen("", "w", stdout);
+    int n; cin >> n;
+
+    int coins[n];
+    FOR(i, n)
+        cin >> coins[i];
+
+    sort(coins, coins + n);
+
+    ll run_sum = 0;
+    FOR(i, n) {
+        if (coins[i] > run_sum + 1) {
+            cout << run_sum + 1 << endl;
+            return 0;
+        }
+        run_sum += coins[i];
+    }
+
+    cout << run_sum + 1;
 
     return 0;
 }
