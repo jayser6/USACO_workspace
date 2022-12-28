@@ -73,10 +73,28 @@ void priorityQueue() {
     priority_queue<P, vector<P>, setcmp> z; // max-heap for struct P
 }
 
+int count_digits(ll num) {
+    int ans = 0;
+    while (num > 0) {
+        num /= 10;
+        ans++;
+    }
+    return ans;
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     int n = 3;
-    cout << (n & -n);
+    // cout << (n & -n);
+
+    ll prev1 = 1, prev2 = 1;
+    for (int i = 0;i < 85;i++) {
+        ll curr = prev1 + prev2;
+        prev1 = prev2;
+        prev2 = curr;
+    }
+    cout << prev2 << " ";
+    cout << count_digits(679891637638612258LL);
 }
