@@ -11,8 +11,8 @@ ____________________________________________________________*/
 #define ROF(i, n) for (int i = n - 1;i >= 0;i--)
 #define ROFO(i, n) for (int i = n - 1;i >= 1;i--)
 #define loop while (true) // rust woooo
-#define ALL(arr) arr.begin(), arr.end()
-#define lower lower_bound 
+#define ALL(arr) arr.begin(), arr.end()`
+#define lower lower_bound
 #define upper upper_bound
 #define ll long long
 #define uint unsigned int
