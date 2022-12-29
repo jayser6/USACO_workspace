@@ -1,6 +1,6 @@
 /*____________________________________________________________
 // started : 12/28/22
-// finished:
+// finished: 12/28/22
 // problem : https://codeforces.com/problemset/problem/1361/A
 ____________________________________________________________*/
 
@@ -51,9 +51,36 @@ int main() {
     }
 
     vector<int> t(n);
-    FOR(i, n) cin >> t[i];
+    vector<pair<int, int>> sorted_t(n);
+    FOR(i, n) {
+        cin >> t[i];
+        sorted_t[i] = { t[i], i };
+    }
+    sort(ALL(sorted_t));
 
+    FOR(i, n) {
+        int curr = sorted_t[i].s;
+        set<int> neighbors;
 
+        for (int to : edges[curr]) {
+            if (t[to] < t[curr]) {
+                neighbors.insert(t[to]);
+            }
+            else if (t[to] == t[curr]) {
+                cout << "-1" << endl;
+                return 0;
+            }
+        }
+
+        if (neighbors.size() != t[curr] - 1) {
+            cout << "-1" << endl;
+            return 0;
+        }
+    }
+
+    FOR(i, n) {
+        cout << sorted_t[i].s + 1 << " ";
+    }
 
     return 0;
 }
