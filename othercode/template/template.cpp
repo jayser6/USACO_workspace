@@ -31,7 +31,8 @@ using namespace std;
 #define f first
 #define s second
 #define endl "\n"
-#define BIG_INT64 (ll)1e18
+#define BIG (int)INT_MAX 
+#define BIGGER (ll)LLONG_MAX
 #define PRIME64 (ll)999998727899999 // this number has 15 digits
 #define PRIME32 (int)(1e9 + 7) 
 #define ASCII_PRIME (int)257
