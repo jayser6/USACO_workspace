@@ -37,7 +37,6 @@ using namespace std;
 #define ASCII_PRIME (int)257
 #define ALPHA_PRIME (int)29
 
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
