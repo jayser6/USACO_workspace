@@ -89,12 +89,10 @@ int main() {
     int n = 3;
     // cout << (n & -n);
 
-    ll prev1 = 1, prev2 = 1;
-    for (int i = 0;i < 85;i++) {
-        ll curr = prev1 + prev2;
-        prev1 = prev2;
-        prev2 = curr;
-    }
-    cout << prev2 << " ";
-    cout << count_digits(679891637638612258LL);
+    set<int> a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+    auto it = a.begin();
+    it++;
+    a.erase(a.begin());
+    cout << *it;
 }
