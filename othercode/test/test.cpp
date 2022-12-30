@@ -4,6 +4,8 @@
 #include <cmath>
 #include <string>
 #include <vector>
+#include <numeric> 
+#include <algorithm> 
 #include <utility>
 #include <algorithm>
 #include <set>
@@ -89,10 +91,5 @@ int main() {
     int n = 3;
     // cout << (n & -n);
 
-    set<int> a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-
-    auto it = a.begin();
-    it++;
-    a.erase(a.begin());
-    cout << *it;
+    cout << __gcd(5, 4);
 }
