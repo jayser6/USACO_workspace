@@ -9,6 +9,7 @@ using namespace std;
 
 #pragma GCC optimize ("Ofast")
 #pragma GCC target ("avx2")
+
 #define FOR(i, n) for (int i = 0;i < n;i++)
 #define FORO(i, n) for (int i = 1;i < n;i++)
 #define ROF(i, n) for (int i = n - 1;i >= 0;i--)

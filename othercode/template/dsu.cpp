@@ -9,6 +9,7 @@ using namespace std;
 
 #pragma GCC optimize ("Ofast")
 #pragma GCC target ("avx2")
+
 #define FOR(i, n) for (int i = 0;i < n;i++)
 #define FORO(i, n) for (int i = 1;i < n;i++)
 #define ROF(i, n) for (int i = n - 1;i >= 0;i--)
@@ -39,9 +40,12 @@ using namespace std;
 
 struct dsu {
     vector<pair<int, int>> comp; // dsu[i] = {parent, size}
+    int num_comps;
 
     dsu(int n) {
+        num_comps = n;
         comp.resize(n);
+        FOR(i, n) comp[i] = { i, 1 };
     }
 
     int find_head(int a) {
@@ -67,6 +71,7 @@ struct dsu {
             sm = a_head;
         }
 
+        num_comps--;
         comp[gr].f = sm;
         comp[sm].s += comp[gr].s;
     }
