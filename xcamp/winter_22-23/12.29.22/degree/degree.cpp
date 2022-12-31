@@ -1,10 +1,11 @@
 /*____________________________________________________________
-// started :
-// finished:
-// problem :
+// started : 12/29/22
+// finished: 12/31/22
+// problem : https://codeforces.com/problemset/problem/1133/F2
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
+using namespace std;
 
 #pragma GCC optimize ("Ofast")
 #pragma GCC target ("avx2")
@@ -30,67 +31,58 @@ ____________________________________________________________*/
 #define f first
 #define s second
 #define endl "\n"
-#define BIG_INT64 (ll)1e18
+#define BIG (int)INT_MAX 
+#define BIGGER (ll)LLONG_MAX
 #define PRIME64 (ll)999998727899999 // this number has 15 digits
 #define PRIME32 (int)(1e9 + 7) 
 #define ASCII_PRIME (int)257
 #define ALPHA_PRIME (int)29
 
-using namespace std;
 
 const int MAX_N = 2 * 1e5;
-pair<int, int> dsu[MAX_N];
-vector<vector<int>> selected(MAX_N, vector<int>()); // selected edges 
 bool visited[MAX_N];
-int to_print;
+vector<vector<int>> edges(MAX_N);
 
-int find_head(int a) {
-    if (dsu[a].f == a)
-        return a;
+struct dsu {
+    vector<pair<int, int>> comp; // dsu[i] = {parent, size}
+    int num_comps;
 
-    return dsu[a].f = find_head(dsu[a].f);
-}
-
-void merge(int a, int b) {
-    int a_head = find_head(a);
-    int b_head = find_head(b);
-
-    if (a_head == b_head)
-        return;
-
-    int gr, sm;
-    if (dsu[a_head].s > dsu[b_head].s) {
-        gr = a_head;
-        sm = b_head;
-    }
-    else {
-        gr = b_head;
-        sm = a_head;
+    dsu(int n) {
+        num_comps = n;
+        comp.resize(n);
+        FOR(i, n) comp[i] = { i, 1 };
     }
 
-    dsu[sm].f = gr;
-    dsu[gr].s += dsu[sm].s;
+    int find_head(int a) {
+        if (comp[a].f == a) return a;
+        return comp[a].f = find_head(comp[a].f);
+    }
 
-    selected[a].pb(b);
-    selected[b].pb(a);
-}
+    void merge(int a, int b) {
+        int a_head = find_head(a);
+        int b_head = find_head(b);
 
-void dfs(int curr) {
-    visited[curr] = true;
-
-
-    for (int u : selected[curr]) {
-        if (!visited[u] && to_print > 0) {
-            cout << curr + 1 << " " << u + 1 << endl;
-            to_print--;
+        if (a_head == b_head) {
+            return;
         }
-    }
 
-    for (int u : selected[curr]) {
-        if (!visited[u])
-            dfs(u);
+        int gr, sm;
+        if (comp[a_head].s > comp[b_head].s) {
+            gr = a_head;
+            sm = b_head;
+        }
+        else {
+            gr = b_head;
+            sm = a_head;
+        }
+
+        num_comps--;
+        comp[gr].f = sm;
+        comp[sm].s += comp[gr].s;
+        edges[a].pb(b);
+        edges[b].pb(a);
     }
-}
+};
 
 int main() {
     ios_base::sync_with_stdio(0);
@@ -98,76 +90,64 @@ int main() {
 
     int n, m, d; cin >> n >> m >> d;
 
-    vector<pair<int, int>> edges;
-    set<int> e_from_1; // edges from 1 to another node
+    dsu s(n);
+    set<int> from_1;
     FOR(i, m) {
-        int u, v; cin >> u >> v; u--; v--;
+        int a, b; cin >> a >> b;
+        a--; b--;
 
-        if (u == 0)
-            e_from_1.insert(v);
-        else if (v == 1)
-            e_from_1.insert(u);
-        else
-            edges.pb({ u, v });
+        if (a == 0) from_1.insert(b);
+        else if (b == 0) from_1.insert(a);
+        else s.merge(a, b);
     }
 
-    set<int> not_seen;
-
-    FORO(i, n) {
-        not_seen.insert(i);
-        dsu[i] = { i, 1 };
-    }
-
-    // form a tree from the given edges if possible. This tree excludes node 0
-    for (const auto& curr : edges) {
-        merge(curr.f, curr.s);
-
-        if (not_seen.find(curr.f) != not_seen.end())
-            not_seen.erase(curr.f);
-        if (not_seen.find(curr.s) != not_seen.end())
-            not_seen.erase(curr.s);
-    }
-
-    // node 0 MUST connect to all the nodes that are in not_seen
-    int curr_deg = 0;
-    for (auto it = not_seen.begin();it != not_seen.end();it++) {
-        int to = *it;
-
-        if (e_from_1.find(to) == e_from_1.end()) {
-            cout << "NO" << endl;
-            return 0;
+    int deg_0 = 0;
+    for (auto it = from_1.begin(); it != from_1.end();) {
+        int i = *it;
+        it++;
+        if (s.find_head(0) != s.find_head(i)) {
+            from_1.erase(i);
+            deg_0++;
         }
-        curr_deg++;
-        e_from_1.erase(to);
-        selected[0].pb(to);
-        selected[to].pb(0);
+        s.merge(0, i);
     }
 
-    // check if the case fails. If not, select more edges connecting node 0 if
-    // necessary 
-    if (curr_deg > d - 1) {
+    if (deg_0 > d || s.num_comps != 1) {
         cout << "NO" << endl;
         return 0;
     }
 
-    while (curr_deg < d) {
-        if (e_from_1.empty()) {
+    auto it = from_1.begin();
+    while (deg_0 < d) {
+        if (from_1.empty()) {
             cout << "NO" << endl;
             return 0;
         }
 
-        int to = *e_from_1.begin();
-        e_from_1.erase(to);
-        selected[0].pb(to);
-        selected[to].pb(0);
-        curr_deg++;
+        int i = *it;
+        it++;
+
+        from_1.erase(i);
+        edges[0].pb(i);
+        deg_0++;
     }
 
-    // find any tree from the selected edges and print it     
-
     cout << "YES" << endl;
-    to_print = n - 1;
-    dfs(0);
+
+    stack<int> dfs;
+    dfs.push(0);
+    while (!dfs.empty()) {
+        int u = dfs.top(); dfs.pop();
+
+        visited[u] = true;
+        for (int v : edges[u]) {
+            if (!visited[v]) {
+                dfs.push(v);
+                visited[v] = true;
+                cout << u + 1 << " " << v + 1 << endl;
+            }
+        }
+    }
 
     return 0;
 }
