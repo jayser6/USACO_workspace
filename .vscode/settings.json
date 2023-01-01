@@ -1,5 +1,5 @@
 {
-  "C_Cpp.errorSquiggles": "Enabled",
+  "C_Cpp.errorSquiggles": "enabled",
   "cmake.configureOnOpen": false,
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -7,7 +7,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnType": false,
   "editor.wordWrap": "bounded",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 110,
   "editor.wrappingIndent": "indent",
 
   "editor.bracketPairColorization.enabled": true,
@@ -15,7 +15,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "typescript.inlayHints.parameterNames.enabled": "all",
 
-  "rewrap.wrappingColumn": 80,
+  "rewrap.wrappingColumn": 110,
   "rewrap.autoWrap.enabled": true,
 
   "C_Cpp.clang_format_style": "Google",
