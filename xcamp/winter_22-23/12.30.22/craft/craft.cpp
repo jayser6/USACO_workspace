@@ -1,10 +1,11 @@
 /*____________________________________________________________
-// started : 12/29/22
+// started : 12/30/22
 // finished:
-// problem :
+// problem : https://codeforces.com/group/eZhSssSlea/contest/419284/problem/D
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
+using namespace std;
 
 #pragma GCC optimize ("Ofast")
 #pragma GCC target ("avx2")
@@ -30,51 +31,59 @@ ____________________________________________________________*/
 #define f first
 #define s second
 #define endl "\n"
-#define BIG_INT64 (ll)1e18
+#define BIG (int)INT_MAX 
+#define BIGGER (ll)LLONG_MAX
 #define PRIME64 (ll)999998727899999 // this number has 15 digits
 #define PRIME32 (int)(1e9 + 7) 
 #define ASCII_PRIME (int)257
 #define ALPHA_PRIME (int)29
 
-using namespace std;
+const int MAX_N = 5 * 1e5;
 
-const int MAX_N = 1e5;
-int a[MAX_N];
-vector<vector<int>> adj(MAX_N);
+int n;
+int c[MAX_N], dp[MAX_N], dist[MAX_N];
+vector<vector<int>> edges(MAX_N, vector<int>());
 
-int dfs(int u, int p) {
-    int xor_below = a[u];
-    for (int v : adj[u]) {
-        if (v == p) continue;
-        xor_below ^= dfs(v, u);
+void dfs(int u, int parent) {
+    for (int v : edges[u]) {
+        if (v == parent) continue;
+
+        dfs(v, u);
+        if (dp[u] == 0) {
+            dp[u] = dp[v] + 1;
+        }
+        else {
+            int curr_first = max(dp[u], 2 * dist[u] + dp[v] + 1);
+            int v_first = max(dp[v] + 1, 2 * (dist[v] + 1) + dp[u]);
+
+            dp[u] = min(curr_first, v_first);
+        }
+        dist[u] += dist[v] + 1;
+        int something = 0;
     }
-    return xor_below;
-}
-
-void solve() {
-    int n, k; cin >> n >> k;
-    FOR(i, n) cin >> a[i];
-
-    fill(ALL(adj), vector<int>());
-    FOR(i, n - 1) {
-        int a, b; cin >> a >> b;
-        a--; b--;
-
-        adj[a].pb(b);
-        adj[b].pb(a);
-    }
-
-    if (dfs(0, -1) == 0) cout << "YES" << endl;
-    else cout << "NO" << endl;
+    dp[u] = max(dp[u], c[u]);
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int t;cin >> t;
-    while (t--)
-        solve();
+    cin >> n;
+
+    FOR(i, n)
+        cin >> c[i];
+
+    FOR(i, n - 1) {
+        int a, b; cin >> a >> b;
+        a--; b--;
+
+        edges[a].pb(b);
+        edges[b].pb(a);
+    }
+
+    dfs(0, -1);
+
+    cout << max(dp[0], c[0] + 2 * (n - 1));
 
     return 0;
 }
