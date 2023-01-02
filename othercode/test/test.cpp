@@ -86,5 +86,5 @@ int count_digits(ll num) {
 
 int main() {
     ios::sync_with_stdio(false);
-    cin.tie(NULL);    // cout << (n & -n);
+    cin.tie(NULL);
 }
