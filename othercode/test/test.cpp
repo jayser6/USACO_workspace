@@ -84,7 +84,16 @@ int count_digits(ll num) {
     return ans;
 }
 
-int main() {
+int main(int argc, char** argv) {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
+
+    tuple <int, int, int> tup = { 1, 2, 3 };
+    auto [a, b, c] = tup; // a = 1, b = 2, c = 3
+
+    cout << a << " " << b << " " << c << endl;
+
+    cout << __cplusplus;
+
+    return 0;
 }
