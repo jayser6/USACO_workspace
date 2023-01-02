@@ -21,6 +21,7 @@ using namespace std;
 #define upper upper_bound
 #define ll long long
 #define uint unsigned int
+#define tup tuple
 #define hashmap unordered_map
 #define hashset unordered_set
 #define p_queue priority_queue

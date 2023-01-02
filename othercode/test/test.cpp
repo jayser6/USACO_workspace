@@ -88,10 +88,10 @@ int main(int argc, char** argv) {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    tuple <int, int, int> tup = { 1, 2, 3 };
-    auto [a, b, c] = tup; // a = 1, b = 2, c = 3
-
-    cout << a << " " << b << " " << c << endl;
+    set<int> a;
+    if (a.lower_bound(9) == a.end()) {
+        cout << "ahhh" << endl;
+    }
 
     cout << __cplusplus;
 
