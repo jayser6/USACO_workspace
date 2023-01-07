@@ -1,11 +1,16 @@
 /*____________________________________________________________
-// started : 12/21/22
+// started :
 // finished:
-// problem : https://codeforces.com/contest/1765/problem/H
+// problem : https://codeforces.com/problemset/problem/1765/H
 ____________________________________________________________*/
 
 #include <bits/stdc++.h>
+using namespace std;
 
+// #pragma GCC optimize ("Ofast")
+// #pragma GCC target ("avx2")
+
+#define debug(x) #x << ": " << x << " "
 #define FOR(i, n) for (int i = 0;i < n;i++)
 #define FORO(i, n) for (int i = 1;i < n;i++)
 #define ROF(i, n) for (int i = n - 1;i >= 0;i--)
@@ -16,6 +21,7 @@ ____________________________________________________________*/
 #define upper upper_bound
 #define ll long long
 #define uint unsigned int
+#define tup tuple
 #define hashmap unordered_map
 #define hashset unordered_set
 #define p_queue priority_queue
@@ -27,24 +33,18 @@ ____________________________________________________________*/
 #define f first
 #define s second
 #define endl "\n"
-#define BIG_NUMBER 1e18LL
-#define BIG_PRIME 999998727899999LL // this number has 15 digits
+#define BIG (int)INT_MAX 
+#define BIGGER (ll)LLONG_MAX
+#define SMALL (int)INT_MIN
+#define SMALLER (ll)LLONG_MIN
+#define PRIME64 (ll)999998727899999 // this number has 15 digits
 #define PRIME32 (int)(1e9 + 7) 
 #define ASCII_PRIME (int)257
 #define ALPHA_PRIME (int)29
 
-using namespace std;
-
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
-
-    int n, m; cin >> n >> m;
-
-    vector<int> p(n);
-    FOR(i, n)
-        cin >> p[i];
-
 
 
 
