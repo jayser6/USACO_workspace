@@ -16,6 +16,8 @@ using namespace std;
 #define ROF(i, n) for (int i = n - 1;i >= 0;i--)
 #define ROFO(i, n) for (int i = n - 1;i >= 1;i--)
 #define loop while (true) // rust woooo
+#define eqmin(a, b) a = min(a, b)
+#define eqmax(a, b) a = max(a, b)
 #define ALL(arr) arr.begin(), arr.end()
 #define lower lower_bound 
 #define upper upper_bound
